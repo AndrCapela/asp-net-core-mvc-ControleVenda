@@ -10,21 +10,21 @@ namespace SalesWebMvc.Models
         public string Email { get; set; }
         public DateTime Bithday { get; set; }
         public double BaseSalary { get; set; }
-        public Departament Departament { get; set; }
+        public Department Department { get; set; }
         public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
         public Seller()
         {
         }
 
-        public Seller(int id, string name, string email, DateTime bithday, double baseSalary, Departament departament)
+        public Seller(int id, string name, string email, DateTime bithday, double baseSalary, Department Department)
         {
             Id = id;
             Name = name;
             Email = email;
             Bithday = bithday;
             BaseSalary = baseSalary;
-            Departament = departament;
+            this.Department = Department;
         }
 
         public void AddSales(SalesRecord sr)
